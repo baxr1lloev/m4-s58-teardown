@@ -1,6 +1,6 @@
 # BMW M4 (G82) — scroll teardown
 
-A black M4 Competition in a dark studio. Scroll, and it turns to x-ray down to the S58 inside.
+A black M4 Competition in a dark studio. Scroll: the body dissolves into x-ray, the S58 inside runs from its real dimensions (84 × 90 mm, 1-5-3-6-2-4), then lifts out and comes apart.
 
 Built with the [teardown](https://github.com/elvarofficial/teardown) Claude Code skill and three.js.
 
