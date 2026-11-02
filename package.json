@@ -1,0 +1,12 @@
+{
+  "name": "m4-s58-teardown",
+  "private": true,
+  "description": "BMW M4 (G82) scroll teardown, built with the teardown Claude Code skill.",
+  "scripts": {
+    "model": "gltf-transform optimize model/source/scene.gltf site/m4.glb --compress meshopt --texture-compress webp --texture-size 2048 --simplify false --join false --palette false --flatten false --instance false",
+    "build": "node ~/.claude/skills/teardown/sims/build.mjs ./site"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "4.2.1"
+  }
+}

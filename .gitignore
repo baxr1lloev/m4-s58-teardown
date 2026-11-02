@@ -1,0 +1,5 @@
+teardown-out/
+model/source/
+*.zip
+.DS_Store
+node_modules/
