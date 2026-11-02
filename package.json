@@ -4,7 +4,9 @@
   "description": "BMW M4 (G82) scroll teardown, built with the teardown Claude Code skill.",
   "scripts": {
     "model": "gltf-transform optimize model/source/scene.gltf site/m4.glb --compress meshopt --texture-compress webp --texture-size 2048 --simplify false --join false --palette false --flatten false --instance false",
-    "build": "node ~/.claude/skills/teardown/sims/build.mjs ./site"
+    "build": "node ~/.claude/skills/teardown/sims/build.mjs ./site ./site-film",
+    "pages": "npm run build && PAGES_URL=https://baxr1lloev.github.io/m4-s58-teardown/ node scripts/pages.mjs",
+    "film": "node ~/.claude/skills/teardown/sims/capture.mjs site-film --size 1280x720 --dpr 1 --fps 30 --out teardown-out/film.mp4"
   },
   "devDependencies": {
     "@gltf-transform/cli": "4.2.1"

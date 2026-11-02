@@ -41,6 +41,7 @@ const CAPTIONS = [
 
 const app = document.getElementById('app');
 document.documentElement.classList.toggle('capture', capture);
+document.title = 'BMW M4 (G82) · scroll teardown';
 const canvas = document.createElement('canvas');
 canvas.id = 'gl';
 app.appendChild(canvas);
@@ -74,7 +75,8 @@ overlay.appendChild(credit);
 
 const studio = createStudio(canvas, {pr: capture ? 1 : undefined});
 const {camera} = studio;
-const car = await loadCar(carUrl.startsWith('url:') ? carUrl.slice(4) : carUrl, studio.scene);
+// the page loads the model as a file next to it; the film build inlines it (base64) so a capture opens from file://
+const car = await loadCar(carUrl.startsWith('url:') ? carUrl.slice(4) : `data:model/gltf-binary;base64,${carUrl}`, studio.scene);
 studio.fitShadow(car.size.x, car.size.z);
 const engine = createEngine();
 engine.root.position.set(BAY.x, BAY.y, 0);
